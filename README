@@ -8,7 +8,8 @@
 INSTALACION:
 
 1.- Descargar el archivo desde https://github.com/raicerk/FormRaicerk/archive/master.zip
-2.- Descomprimir archivo y colocar la carpeta en \wordpress\wp-content\plugins
+2.- Descomprimir archivo y renombrar carpeta de "FormRaicerk-master" a "FormRaicerk" y 
+colocar la carpeta en \wordpress\wp-content\plugins
 3.- Ingresar al administrador de worpress y activar el plugin "FormRaicerk"
 4.- Ingresar a la opcion editar para personalizar informacion
 
