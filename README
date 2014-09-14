@@ -16,8 +16,9 @@ colocar la carpeta en \wordpress\wp-content\plugins
 CONFIGURACION:
 
 1.- Ingresar al archivo formraicerk.php y modificar las opciones de la linea
-_________________________________________________________________________________________________________________________
-formularioCaptcha('destinatario copia', 'asunto', 'correo a responder', 'Nombre a responder', 'correo de', 'nombre de')
--------------------------------------------------------------------------------------------------------------------------
+_______________________________________________________________________
+formularioCaptcha('destinatario copia', 'asunto', 'correo a responder',
+'Nombre a responder', 'correo de', 'nombre de')
+-----------------------------------------------------------------------
 
 Reemplazando el texto por la informacion indicada
