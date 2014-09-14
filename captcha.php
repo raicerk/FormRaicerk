@@ -1,6 +1,4 @@
 <?php
-session_start();
-
 include_once('../../../wp-load.php');
 
 class captcha{
