@@ -1,0 +1,21 @@
+=====================================================================================================================
+                                                    FormRaicerk
+=====================================================================================================================
+
+* Plugins para wordpress
+
+---------------------------------------------------------------------------------------------------------------------
+INSTALACION:
+
+1.- Descargar el archivo desde https://github.com/raicerk/FormRaicerk/archive/master.zip
+2.- Descomprimir archivo y colocar la carpeta en \wordpress\wp-content\plugins
+3.- Ingresar al administrador de worpress y activar el plugin "FormRaicerk"
+4.- Ingresar a la opcion editar para personalizar informacion
+
+CONFIGURACION:
+
+1.- Ingresar al archivo formraicerk.php y modificar las opciones
+
+formularioCaptcha('destinatario copia', 'asunto', 'correo a responder', 'Nombre a responder', 'correo de', 'nombre de')
+
+Reemplezando el texto por la informacion indicada

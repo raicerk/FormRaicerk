@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Form de Raicerk
-Plugin URI: http://raicerk.cl/wordpress
+Plugin URI: http://github.com/raicerk/FormRaicerk
 Description: Formulario de envio de correos y validacion de spam
 Version: 1.0
 Author: Juan Mora
@@ -28,6 +28,6 @@ function opciones_FormRaicerk(){
 
 function instancia(){
     $captcha = new captcha();
-    echo $captcha->formularioCaptcha("index.php");
+    echo $captcha->formularioCaptcha('destinatario copia', 'asunto', 'correo a responder', 'Nombre a responder', 'correo de', 'nombre de');
 }
 ?>
