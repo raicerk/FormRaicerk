@@ -23,6 +23,6 @@ function opciones_FormRaicerk(){
 function instancia(){
     include_once('captcha.php');
     $captcha = new captcha();
-    echo $captcha->formularioCaptcha("index.php");
+    echo $captcha->formularioCaptcha('destinatario copia', 'asunto', 'correo a responder', 'Nombre a responder', 'correo de', 'nombre de');
 }
 ?>
