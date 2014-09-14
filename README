@@ -19,6 +19,6 @@ CONFIGURACION:
 _______________________________________________________________________
 formularioCaptcha('destinatario copia', 'asunto', 'correo a responder',
 'Nombre a responder', 'correo de', 'nombre de')
------------------------------------------------------------------------
+_______________________________________________________________________
 
 Reemplazando el texto por la informacion indicada
