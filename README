@@ -14,8 +14,9 @@ INSTALACION:
 
 CONFIGURACION:
 
-1.- Ingresar al archivo formraicerk.php y modificar las opciones
-
+1.- Ingresar al archivo formraicerk.php y modificar las opciones de la linea
+_________________________________________________________________________________________________________________________
 formularioCaptcha('destinatario copia', 'asunto', 'correo a responder', 'Nombre a responder', 'correo de', 'nombre de')
+-------------------------------------------------------------------------------------------------------------------------
 
-Reemplezando el texto por la informacion indicada
+Reemplazando el texto por la informacion indicada
