@@ -8,26 +8,19 @@ Author: Juan Mora
 Author URI: http://facebook.com/Raicerk
 License: GPL2
 */
-
-
 session_start();
 include_once('captcha.php');
-$captcha = new captcha();
 add_action('wp_footer', 'instancia');
 add_action('admin_menu', 'PanelOpcionesFormRaicerk');
-
-
 function PanelOpcionesFormRaicerk(){
     add_menu_page('Administrador de Form Raicerk','FormRaicerk','administrator','FormRaicerk','opciones_FormRaicerk');
 }
-
 function opciones_FormRaicerk(){
     $captcha = new captcha();
     echo $captcha->opcionesmenu();
 }
-
 function instancia(){
     $captcha = new captcha();
-    echo $captcha->formularioCaptcha('destinatario copia', 'asunto', 'correo a responder', 'Nombre a responder', 'correo de', 'nombre de');
+    echo $captcha->formularioCaptcha("index.php");
 }
 ?>

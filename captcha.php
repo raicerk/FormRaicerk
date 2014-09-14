@@ -1,9 +1,7 @@
 <?php
-include_once('../../../wp-load.php');
-
+include_once('../wp-load.php');
 class captcha{
     private function creacapta(){
-
         $opcion = rand(1, 5);
         $_SESSION['IdRespuesta'] = $opcion;
         switch($opcion){
@@ -24,14 +22,15 @@ class captcha{
             break;
         }
     }
-    private function mandamail($destinatario1, $destinatario2, $asunto, $responder_a, $responder_a_nombre, $de_correo, $de_nombre, $mensaje){
-        $to = array($destinatario1,$destinatario2);
-        $subject = $asunto;
-        $headers = 'Reply-to: '.$responder_a_nombre.' <'.$responder_a.'>' . "\r\n";
-        $message = $mensaje;
+    private function mandamail(){
+        $to = array('raicerk@outlook.com','raicerk@gmail.com');
+        $subject = 'prueba desde raicerk';
+        $headers = 'Reply-to: Juan Mora <raicerk@gmail.com>' . "\r\n";
+        $message = 'hola<br>';
+        $message .= 'mensaje de prueba desde worspress';
         add_filter('wp_mail_content_type',create_function('', 'return "text/html";'));
-        add_filter('wp_mail_from',create_function('','return "'.$de_correo.'";'));
-        add_filter('wp_mail_from_name',create_function('','return "'.$de_nombre.'";'));
+        add_filter('wp_mail_from',create_function('','return "callcenter@raicerk.cl";'));
+        add_filter('wp_mail_from_name',create_function('','return "Callcenter Wordpress";'));
         wp_mail( $to, $subject, $message, $headers);
     }
     public function opcionesmenu(){
@@ -59,7 +58,7 @@ class captcha{
         $html .= "</table>";
         return $html;
     }
-    public function formularioCaptcha($destinatario1, $asunto, $responder_a, $responder_a_nombre, $de_correo, $de_nombre){
+    public function formularioCaptcha($archivo){
 
         if($_POST){
             $respuesta = array(
@@ -70,31 +69,28 @@ class captcha{
                 '5' => '5',
             );
 
-            $destinatario2 = $_POST['txtCorreo'];
-            $mensaje = $_POST['txtMensaje'];
-
             if($respuesta[$_SESSION['IdRespuesta']] != $_POST['txtRespuesta']){
                 $estado = "Error";
             }else{
-                $this->mandamail($destinatario1, $destinatario2, $asunto, $responder_a, $responder_a_nombre, $de_correo, $de_nombre, $mensaje);
+                $this->mandamail();
                 $estado = "Exito";
             }
         }
         $html = "";
         $html .= "<div id='contactoraicerk'>";
-        $html .= "<form action='index.php' method='POST'>";
+        $html .= "<form action='".$archivo."' method='POST'>";
         $html .= "<table>";
         $html .= "<tr>";
         $html .= "<td><label>Nombre</label></td>";
-        $html .= "<td><input type='text' value='' class='' id='txtNombre' name='txtNombre'></td>";
+        $html .= "<td><input type='text' value='' class='' id='' name=''></td>";
         $html .= "</tr>";
         $html .= "<tr>";
         $html .= "<td><label>Telefono</label></td>";
-        $html .= "<td><input type='text' value='' class='' id='txtTelefono' name='txtTelefono'></td>";
+        $html .= "<td><input type='text' value='' class='' id='' name=''></td>";
         $html .= "</tr>";
         $html .= "<tr>";
         $html .= "<td><label>Correo Electronico</label></td>";
-        $html .= "<td><input type='text' value='' class='' id='txtCorreo' name='txtCorreo'></td>";
+        $html .= "<td><input type='text' value='' class='' id='' name=''></td>";
         $html .= "</tr>";
         $html .= "<tr>";
         $html .= "<td><label>Valida</label></td>";
@@ -102,7 +98,7 @@ class captcha{
         $html .= "</tr>";
         $html .= "<tr>";
         $html .= "<td><label>Consulta</label></td>";
-        $html .= "<td><textarea class='' id='txtMensaje' name='txtMensaje'></textarea></td>";
+        $html .= "<td><textarea class='' id='' name=''></textarea></td>";
         $html .= "</tr>";
         $html .= "<tr>";
         $html .= "<td><!-- Submit --></td>";
@@ -116,17 +112,6 @@ class captcha{
         return $html;
     }
 }
-?>
-
-<?php
-
-
-
-
-
-
-
-
 ?>
 
 
